@@ -1,4 +1,5 @@
 function amdiagram(data_array){
+	document.getElementById("title_amchart").innerHTML = "Распределение освещенности после '+ n +' отражений";
 
 var jsonArray = []
 for (var i in data_array){
@@ -12,8 +13,10 @@ for (var i in data_array){
 	chart.dataProvider = jsonArray;
 	chart.marginLeft = 10;
 	chart.categoryField = "angle";
-//	chart.dataDateFormat = "YYYY";
-
+	//	chart.dataDateFormat = "YYYY";
+	//chart.addTitle("Распределение освещенности после "+ n +" отражений", 15);
+	
+	
 	// listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
 //	chart.addListener("dataUpdated", zoomChart);
 
@@ -35,7 +38,7 @@ for (var i in data_array){
 
 	// GRAPH
 	graph = new AmCharts.AmGraph();
-//	graph.type = "smoothedLine"; // this line makes the graph smoothed line.
+	//	graph.type = "smoothedLine"; // this line makes the graph smoothed line.
 	graph.lineColor = "blue";
 	graph.negativeLineColor = "#637bb6"; // this line makes the graph to change color when it drops below 0
 	/*graph.bullet = "round";
@@ -77,7 +80,7 @@ for (var i in data_array){
 	chart.creditsPosition = "bottom-right";
 
 	// WRITE
-	chart.write("chartdiv");
+	chart.write("chart_div_amchart");
 }
 
  function zoomChart() {

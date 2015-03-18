@@ -71,7 +71,15 @@ main.content {
 	margin: 5px;
 	background: white;
 }
-
+#chart_div_amchart{
+	width: 1000px; 
+	height: 600px;
+}
+#chart_div_google { 
+	width: 1000px; 
+	height: 500px;
+	display: none;
+}
 
 /* Left Sidebar
 -----------------------------------------------------------------------------*/

@@ -8,41 +8,20 @@
 	<meta name="description" content="Some analysis of the Integrating Sphere fixture effect" />
 	<link href="style.css" rel="stylesheet">
 	
-	<!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
-	<script src="jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
 
-	
-	<script src="all_simple.js"></script>
-	<script src="canvas_2.js"></script>
-	<script src="diagram_1.js"></script>
+	<script src="js/all_simple.js"></script>
+	<script src="js/diagram_1.js"></script>
 
-	<script src="besier.js"></script>
+	<script src="js/besier.js"></script>
 	<script src="amcharts/amcharts.js"></script>
     <script src="amcharts/serial.js"></script>
-	<script src="diagram_2_amchart.js"></script>	
-	
+	<script src="js/diagram_2_amchart.js"></script>	
 	
 	<script>
-	$(document).ready(function(){
-		setup();
-		sphere_drow();
-						
-		document.getElementById('canvas1').onmousemove = function(event){
-			cursorStyle(event);
-		};
-		
-		$("#canvas1").mouseup(function(event){
-			sphere_drow();
-		});
-
-	
-	});
-
-		//google.load("visualization", "1", {packages:["corechart"]});
-		//google.setOnLoadCallback(drawChart);
-		
-	
+		google.load("visualization", "1", {packages:["corechart"]});
+		google.setOnLoadCallback(drawChart);
 	</script>
 	
 </head>
@@ -104,17 +83,12 @@
 	<main class="content">
 		<canvas id="canvas1"></canvas>
 		
-		<p id="test">test1</p>
-		<p id="test">test2</p>
-		<p id="test">test3</p>
-
-		<div id="chartdiv" style="width:100%; height:600px;"></div>
+		<p id="title_amchart"></p>
+		<div id="chart_div_amchart"></div>
 		
-		<div id="chart_div" style="width: 1000px; height: 500px;"></div>
-
+		<button class="add_diagram">Отобразить на Google Charts</button>
+		<div id="chart_div_google"></div>
 		
-		<canvas id="canvas2"></canvas>		
-				
 	</main>
 	
 </div><!-- .wrapper -->

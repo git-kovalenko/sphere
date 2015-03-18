@@ -1,3 +1,24 @@
+$(document).ready(function(){
+	
+	setup();
+	sphere_drow();
+		
+		
+	document.getElementById('canvas1').onmousemove = function(event){
+		cursorStyle(event);
+	};
+	
+	$("#canvas1").mouseup(function(event){
+		sphere_drow();
+	});
+
+	
+});
+
+		
+
+
+
 function setparam(param, value,thi){
 	settings[param] = value;	 
 	//alert(thi)

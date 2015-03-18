@@ -55,20 +55,23 @@ function data_prepare(n){
 
 
 function drawChart() {
-	var data = new google.visualization.DataTable();
-	data.addColumn('number','Polar degree');
-	data.addColumn('number', 'E');
-	data.addColumn('number', 'E сглаж.');
-	data.addRows(energy_distribution);
+	$('.add_diagram').click( function(){
+		$('#chart_div_google').show();
+		var data = new google.visualization.DataTable();
+		data.addColumn('number','Polar degree');
+		data.addColumn('number', 'E');
+		data.addColumn('number', 'E сглаж.');
+		data.addRows(energy_distribution);
 
-	var options = {
-		title: 'Распределение освещенности после '+ n +' отражений',
-		//curveType: 'function',
-		chartArea: {left:'5%',top:'5%',width:'93%',height:'85%'},
-		explorer: {},
-		legend: { position: 'bottom' }
-	};
+		var options = {
+			title: 'Распределение освещенности после '+ n +' отражений',
+			//curveType: 'function',
+			chartArea: {left:'5%',top:'5%',width:'93%',height:'85%'},
+			explorer: {},
+			legend: { position: 'bottom' }
+		};
 
-	var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-	chart.draw(data, options);
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div_google'));
+		chart.draw(data, options);
+	});
 }
