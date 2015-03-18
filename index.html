@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title>Integrating Sphere</title>
+	<meta name="keywords" content="Integrating Sphere analysis" />
+	<meta name="description" content="Some analysis of the Integrating Sphere fixture effect" />
+	<link href="style.css" rel="stylesheet">
+	
+	<!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+	<script src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+	
+	<script src="all_simple.js"></script>
+	<script src="canvas_2.js"></script>
+	<script src="diagram_1.js"></script>
+
+	<script src="besier.js"></script>
+	<script src="amcharts/amcharts.js"></script>
+    <script src="amcharts/serial.js"></script>
+	<script src="diagram_2_amchart.js"></script>	
+	
+	
+	<script>
+	$(document).ready(function(){
+		setup();
+		sphere_drow();
+						
+		document.getElementById('canvas1').onmousemove = function(event){
+			cursorStyle(event);
+		};
+		
+		$("#canvas1").mouseup(function(event){
+			sphere_drow();
+		});
+
+	
+	});
+
+		//google.load("visualization", "1", {packages:["corechart"]});
+		//google.setOnLoadCallback(drawChart);
+		
+	
+	</script>
+	
+</head>
+
+<body>
+<div class="wrapper">
+
+	<header class="header">
+		<p class="logo"> 
+			<strong class="logo-text">Integrating Sphere</strong>
+		</p>
+		
+	</header>
+
+	
+	<aside class="left-sidebar">
+		<ul>
+			<li><a href="About.html">About</a></li>
+			<li><a href="#">1</a></li>
+			<li> <a href="#">2</a>
+				<ul>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+		<div>
+			<h3>Установка параметров</h3>
+			
+			<p>Количество отражений:</p>
+			<input id="reflects" type="range" min="0" max="5" step="1" value="2" 
+				oninput="document.getElementById('reflects_span').textContent = this.value"
+				onchange="setparam('n', this.value, this)" />
+			<span id="reflects_span">2</span>
+			
+			<p>Дискретность:</p>
+			<input id="discretisation" type="range" min="1" max="50" step="1" value="5" 
+				oninput="document.getElementById('discretisation_span').textContent = this.value"
+				onchange="setparam('discret', this.value)" />
+			<span id="discretisation_span">5</span>
+			
+			<p>Коэффициент отражения:</p>
+			<input id="reflectance" type="range" min="90" max="99" step="1" value="95" 
+				oninput="document.getElementById('reflectance_span').textContent = this.value/100"
+				onchange="setparam('discret', this.value)" />
+			<span id="reflectance_span">0.95</span>
+			
+			<p>Угол источника:</p>
+			<input id="source_angle" type="range" min="1" max="180" step="1" value="50" 
+				oninput="document.getElementById('source_angle_span').textContent = this.value"
+				onchange="setparam('source_angle', this.value)" />
+			<span id="source_angle_span">50</span>
+			
+			<input type="button" value="Расчёт" onclick="sphere_drow()" />
+		</div>
+	</aside><!-- .left-sidebar -->
+	
+	<main class="content">
+		<canvas id="canvas1"></canvas>
+		
+		<p id="test">test1</p>
+		<p id="test">test2</p>
+		<p id="test">test3</p>
+
+		<div id="chartdiv" style="width:100%; height:600px;"></div>
+		
+		<div id="chart_div" style="width: 1000px; height: 500px;"></div>
+
+		
+		<canvas id="canvas2"></canvas>		
+				
+	</main>
+	
+</div><!-- .wrapper -->
+
+<footer class="footer">
+	<strong>2014</strong> 
+</footer><!-- .footer -->
+
+</body>
+</html>

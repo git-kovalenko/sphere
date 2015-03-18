@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	font: normal 16px/20px Consolas, Tahoma, Verdana, Arial, sans-serif;
+	height: 100%;
+	background: #eee0c3;
+}
+
+.wrapper {
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	
+		
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+	height: 50px;
+	border: 2px solid #f59628;
+	border-radius: 10px;
+	
+}
+p.logo{
+	
+	width: 200px;
+	height: 40px;
+	margin-top: 5px;
+	margin-left: 2.5%;
+	background: linear-gradient(to top, white, #f79d2f);
+	position: reletive;
+	text-align: center;
+
+}
+.logo-text {
+	color: #155d73;
+	font-size: 1em;
+	line-height: 2em;
+	
+}
+/* Content
+-----------------------------------------------------------------------------*/
+main.content {
+	
+	position: relative;
+	margin-left: 21.4%;
+	float: top;
+	min-height: 100%;
+	min-width: 1010px;
+	border: 2px solid #c93a0e;
+	border-radius: 10px;
+}
+
+#canvas1{
+	margin: 5px;
+	background: white;
+}
+
+#canvas2{
+	margin: 5px;
+	background: white;
+}
+
+
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+aside.left-sidebar {
+	float: left;
+	width: 20%;
+	height: 100%;
+	position: relative;
+	padding-left: 1%;
+	border: 2px solid #3e9fb0;
+	border-radius: 10px;
+	
+	
+}
+aside ul {
+	margin-bottom: 0.3rem;
+	color: #155d73;
+	list-style: none outside none;
+	font-size: 1.5rem;
+	
+}
+aside ul li{
+	padding-top: 1.2rem;
+}
+aside ul ul {
+	color: inherit;
+	list-style: circle outside;
+	padding-left: 2rem;
+	font-size: 1.3rem;
+	
+	
+}
+aside li li {
+	padding-top: 0.3rem;
+}
+
+aside li a{
+	text-decoration: none;
+	padding-right: 0%;
+	display: block;
+	border: 1px solid transparent;
+}
+
+aside li a:hover{
+	text-shadow: 2px 2px 4px rgba(0, 141, 150, 1); /*http://css3gen.com/text-shadow/*/
+	border: 1px solid #3e9fb0;
+	border-radius: 5px;
+}
+
+aside 
+
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+	margin: auto;
+	min-width: 600px;
+	max-width: 1200px;
+	height: 50px;
+	position: relative;
+	border: 2px solid #BFF08E;
+	border-radius: 10px;
+	padding: 5px;
+}
