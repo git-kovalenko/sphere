@@ -2,28 +2,8 @@ $(document).ready(function(){
 	
 	setup();
 	sphere_drow();
-		
-		
-	document.getElementById('canvas1').onmousemove = function(event){
-		cursorStyle(event);
-	};
-	
-	$("#canvas1").mouseup(function(event){
-		sphere_drow();
-	});
 
-	
 });
-
-		
-
-
-
-function setparam(param, value,thi){
-	settings[param] = value;	 
-	//alert(thi)
-	
-}
 
 function setup() {
 
@@ -36,24 +16,60 @@ function setup() {
 	
 	/*wall_1 = new Wall({ x1:polarToXY(R,60).x, y1: polarToXY(R,60).y, x2: 1, y2: 1});*/
 	canvas1 = document.getElementById("canvas1");
-
+	
+	var sds = $('.left-sidebar span');
+	$.each(sds, function(){
+		this.textContent =  $(this).prev().val();
+	}) 
+	
+	document.getElementById('reflects').onchange = function(){
+		settings['n'] = this.value;	 
+		document.getElementById('reflects_span').textContent = this.value;
+	}
+	document.getElementById('discretisation').onchange = function(){	
+		settings['discret'] = this.value;	
+		document.getElementById('discretisation_span').textContent = this.value;
+	}
+	document.getElementById('reflectance').onchange = function(){	
+		settings['reflectance'] = this.value;
+		document.getElementById('reflectance_span').textContent = this.value;
+	}
+	document.getElementById('source_angle').onchange = function(){	
+		settings['source_angle'] = this.value;	
+		document.getElementById('source_angle_span').textContent = this.value;
+	}
+		
+	$('.left-sidebar button').click( function(){
+		sphere_drow();	
+	});
+	
+	document.getElementById('canvas1').onmousemove = function(event){
+		wall_move(event);
+	};
+	
 };
 
-function cursorStyle(e){
- var x = (e.offsetX==undefined?e.layerX:e.offsetX) - R;
-  var y = R - (e.offsetY==undefined?e.layerY:e.offsetY);
-	x -= canvas1.offsetLeft;
-	y += canvas1.offsetTop;
+
+function wall_move(e){
+ var x = (e.offsetX == undefined ? e.layerX:e.offsetX) - R;
+  var y = R - (e.offsetY == undefined ? e.layerY:e.offsetY);
 	
-	var buttonON = e.buttons;
+	var buttonON = e.which;
 	
+	if (!e.offsetX){
+		x -= canvas1.offsetLeft;
+		y += canvas1.offsetTop;
+		var buttonON = e.buttons;
+	}
+
+	var sense = 40;
 	if (x){
-		if ((y > wall_1.y1 - 10) && (y < wall_1.y1 + 10) && (x > wall_1.x1 - 10) && (x < wall_1.x1 + 10)) {
+		if ((y > wall_1.y1 - sense) && (y < wall_1.y1 + sense) && (x > wall_1.x1 - sense) && (x < wall_1.x1 + sense)) {
 			document.body.style.cursor = 'crosshair';
 			var point = 1;
 		} else 
 
-		if ((y > wall_1.y2 - 10) && (y < wall_1.y2 + 10) && (x > wall_1.x2 - 10) && (x < wall_1.x2 + 10)) {
+		if ((y > wall_1.y2 - sense) && (y < wall_1.y2 + sense) && (x > wall_1.x2 - sense) && (x < wall_1.x2 + sense)) {
 			document.body.style.cursor = 'crosshair';
 			var point = 2;
 			
@@ -61,7 +77,6 @@ function cursorStyle(e){
 			document.body.style.cursor = 'default';
 		}
 	}
-
 	
 	if ( buttonON && point) {
 		
@@ -75,8 +90,8 @@ function cursorStyle(e){
 	wall_1.drowfast();
 	}
 	
-	
 };
+
 
 function sphere_drow(){	
 	settings = {}
@@ -198,13 +213,6 @@ function sphere_drow(){
 	context1.strokeStyle = lc;
 	
 	
-	
-	/*
-	$(".content p:eq(0)").text(  );	
-	$(".content p:eq(1)").text( n );
-	$(".content p:eq(2)").text(  );
-	$(".content p:eq(3)").text( Math.tan(checkIntersection.angle * Math.PI/180));
-	*/
 };
 
 

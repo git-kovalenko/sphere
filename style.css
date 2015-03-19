@@ -3,24 +3,35 @@
 	padding: 0;
 }
 html {
-	height: 100%;
+	min-height: 100%;
+	background: lightgray;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-	display: block;
-}
+
 body {
-	font: normal 16px/20px Consolas, Tahoma, Verdana, Arial, sans-serif;
-	height: 100%;
-	background: #eee0c3;
+	margin: 0 auto;
+	font: normal 16px Georgia, Tahoma, Verdana, Arial, sans-serif;
+	min-height: 100%;
+	max-width: 1300px;
+	min-width: 1200px;
+	background: #fff;
 }
 
 .wrapper {
-	margin: 0 auto;
 	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	
+	height: 1%;
+	margin: 0 5px;
 		
+}
+h1{
+	font-size: 18px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 80%;
+	text-align: center;
+}
+h2{
+	font-size: 18px;
+	text-align: center;
 }
 
 
@@ -28,32 +39,33 @@ body {
 -----------------------------------------------------------------------------*/
 .header {
 	height: 50px;
+	line-height: 50px;
 	border: 2px solid #f59628;
 	border-radius: 10px;
-	
+	background: linear-gradient(to top, white, skyblue);
+	margin-bottom: 2px;
 }
-p.logo{
+.logo{
 	
+	display: inline-block;
+	vertical-align: middle;
 	width: 200px;
 	height: 40px;
-	margin-top: 5px;
+	line-height: 40px;
 	margin-left: 2.5%;
-	background: linear-gradient(to top, white, #f79d2f);
-	position: reletive;
+	background: linear-gradient(to bottom, white, #FF6600);
+	border-radius: 50%;
 	text-align: center;
+}
+.logo strong{
+	vertical-align: middle;
+	text-shadow: 1px 1px 1px yellow;
+}
 
-}
-.logo-text {
-	color: #155d73;
-	font-size: 1em;
-	line-height: 2em;
-	
-}
+
 /* Content
 -----------------------------------------------------------------------------*/
-main.content {
-	
-	position: relative;
+.content {
 	margin-left: 21.4%;
 	float: top;
 	min-height: 100%;
@@ -67,14 +79,23 @@ main.content {
 	background: white;
 }
 
-#canvas2{
-	margin: 5px;
-	background: white;
-}
 #chart_div_amchart{
 	width: 1000px; 
 	height: 600px;
+	margin-left: 10px;
 }
+
+.add_diagram{
+	margin: 10px;
+	padding: 5px;
+	border-radius: 5px;
+}
+.add_diagram:hover{
+	border-color: red;
+	text-shadow: 1px 1px 1px #3e9fb0;
+	cursor: pointer;
+}
+
 #chart_div_google { 
 	width: 1000px; 
 	height: 500px;
@@ -83,65 +104,36 @@ main.content {
 
 /* Left Sidebar
 -----------------------------------------------------------------------------*/
-aside.left-sidebar {
+.left-sidebar {
 	float: left;
 	width: 20%;
-	height: 100%;
-	position: relative;
-	padding-left: 1%;
+	padding: 0 0 10px 1%;
 	border: 2px solid #3e9fb0;
 	border-radius: 10px;
-	
-	
+	background: #eee0c3;
 }
-aside ul {
-	margin-bottom: 0.3rem;
-	color: #155d73;
-	list-style: none outside none;
-	font-size: 1.5rem;
-	
+.left-sidebar > *{
+	margin-top: 10px;
 }
-aside ul li{
-	padding-top: 1.2rem;
-}
-aside ul ul {
-	color: inherit;
-	list-style: circle outside;
-	padding-left: 2rem;
-	font-size: 1.3rem;
-	
-	
-}
-aside li li {
-	padding-top: 0.3rem;
-}
-
-aside li a{
-	text-decoration: none;
-	padding-right: 0%;
+.buttons{
 	display: block;
-	border: 1px solid transparent;
-}
-
-aside li a:hover{
-	text-shadow: 2px 2px 4px rgba(0, 141, 150, 1); /*http://css3gen.com/text-shadow/*/
-	border: 1px solid #3e9fb0;
+	padding: 5px;
 	border-radius: 5px;
 }
-
-aside 
-
+.buttons:hover{
+	border-color: red;
+	text-shadow: 1px 1px 1px #3e9fb0;
+	cursor: pointer;
+}
 
 
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
-	margin: auto;
-	min-width: 600px;
-	max-width: 1200px;
-	height: 50px;
-	position: relative;
-	border: 2px solid #BFF08E;
+	border: 2px solid green;
+	background: linear-gradient(to top, lightgreen, white);
 	border-radius: 10px;
-	padding: 5px;
+	padding: 5px 0;
+	margin: 2px 5px;
+	text-align: center;
 }

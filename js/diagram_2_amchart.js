@@ -1,5 +1,5 @@
 function amdiagram(data_array){
-	document.getElementById("title_amchart").innerHTML = "Распределение освещенности после '+ n +' отражений";
+	document.getElementById("title_amchart").innerHTML = 'График распределения освещенности после '+ n +' отражений';
 
 var jsonArray = []
 for (var i in data_array){

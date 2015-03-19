@@ -64,7 +64,7 @@ function drawChart() {
 		data.addRows(energy_distribution);
 
 		var options = {
-			title: 'Распределение освещенности после '+ n +' отражений',
+			title: 'График распределения освещенности после '+ n +' отражений',
 			//curveType: 'function',
 			chartArea: {left:'5%',top:'5%',width:'93%',height:'85%'},
 			explorer: {},

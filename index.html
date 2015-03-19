@@ -31,59 +31,38 @@
 
 	<header class="header">
 		<p class="logo"> 
-			<strong class="logo-text">Integrating Sphere</strong>
+			<strong>Integrating Sphere</strong>
 		</p>
-		
+		<h1>2-мерный расчет хода лучей в интегрирующей сфере со светодиодом и блендой</h1>
 	</header>
 
 	
 	<aside class="left-sidebar">
-		<ul>
-			<li><a href="About.html">About</a></li>
-			<li><a href="#">1</a></li>
-			<li> <a href="#">2</a>
-				<ul>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-				</ul>
-			</li>
-		</ul>
+		<h2>Установка параметров</h2>
 		
-		<div>
-			<h3>Установка параметров</h3>
-			
-			<p>Количество отражений:</p>
-			<input id="reflects" type="range" min="0" max="5" step="1" value="2" 
-				oninput="document.getElementById('reflects_span').textContent = this.value"
-				onchange="setparam('n', this.value, this)" />
-			<span id="reflects_span">2</span>
-			
-			<p>Дискретность:</p>
-			<input id="discretisation" type="range" min="1" max="50" step="1" value="5" 
-				oninput="document.getElementById('discretisation_span').textContent = this.value"
-				onchange="setparam('discret', this.value)" />
-			<span id="discretisation_span">5</span>
-			
-			<p>Коэффициент отражения:</p>
-			<input id="reflectance" type="range" min="90" max="99" step="1" value="95" 
-				oninput="document.getElementById('reflectance_span').textContent = this.value/100"
-				onchange="setparam('discret', this.value)" />
-			<span id="reflectance_span">0.95</span>
-			
-			<p>Угол источника:</p>
-			<input id="source_angle" type="range" min="1" max="180" step="1" value="50" 
-				oninput="document.getElementById('source_angle_span').textContent = this.value"
-				onchange="setparam('source_angle', this.value)" />
-			<span id="source_angle_span">50</span>
-			
-			<input type="button" value="Расчёт" onclick="sphere_drow()" />
-		</div>
+		<p>Количество отражений:</p>
+		<input id="reflects" type="range" min="0" max="5" step="1" value="2"/>
+		<span id="reflects_span"></span>
+		
+		<p>Дискретность:</p>
+		<input id="discretisation" type="range" min="1" max="20" step="1" value="5" />
+		<span id="discretisation_span"></span>
+		
+		<p>Коэффициент отражения:</p>
+		<input id="reflectance" type="range" min="90" max="99" step="1" value="95"/>
+		<span id="reflectance_span"></span>
+		
+		<p>Аппертурный угол источника:</p>
+		<input id="source_angle" type="range" min="1" max="180" step="1" value="50"/>
+		<span id="source_angle_span"></span>
+		
+		<button class="buttons">Расчёт</button>
 	</aside><!-- .left-sidebar -->
 	
 	<main class="content">
 		<canvas id="canvas1"></canvas>
 		
-		<p id="title_amchart"></p>
+		<h2 id="title_amchart"></h2>
 		<div id="chart_div_amchart"></div>
 		
 		<button class="add_diagram">Отобразить на Google Charts</button>
@@ -94,7 +73,8 @@
 </div><!-- .wrapper -->
 
 <footer class="footer">
-	<strong>2014</strong> 
+	<strong>© 2014 Anatoliy Kovalenko.</strong> <noindex><br>
+	<a href="mailto:a.kovalenko@ukr.net">a.kovalenko@ukr.net</a> </noindex>
 </footer><!-- .footer -->
 
 </body>
