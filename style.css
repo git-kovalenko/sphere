@@ -11,20 +11,21 @@ body {
 	margin: 0 auto;
 	font: normal 16px Georgia, Tahoma, Verdana, Arial, sans-serif;
 	min-height: 100%;
-	max-width: 1300px;
-	min-width: 1200px;
+	max-width: 1400px;
 	background: #fff;
 }
 
 .wrapper {
+	display: flex;
+	justify-content: center;
 	min-height: 100%;
 	height: 1%;
 	margin: 0 5px;
-		
 }
 h1{
 	font-size: 18px;
-	display: inline-block;
+	display: inline;
+	margin-left: 80px;
 	vertical-align: middle;
 	width: 80%;
 	text-align: center;
@@ -43,7 +44,7 @@ h2{
 	border: 2px solid #f59628;
 	border-radius: 10px;
 	background: linear-gradient(to top, white, skyblue);
-	margin-bottom: 2px;
+	margin: 0 5px 2px 5px;
 }
 .logo{
 	
@@ -66,12 +67,11 @@ h2{
 /* Content
 -----------------------------------------------------------------------------*/
 .content {
-	margin-left: 21.4%;
-	float: top;
 	min-height: 100%;
-	min-width: 1010px;
+	width: 1010px;
 	border: 2px solid #c93a0e;
 	border-radius: 10px;
+	margin-left: 2px;
 }
 
 #canvas1{
@@ -105,15 +105,18 @@ h2{
 /* Left Sidebar
 -----------------------------------------------------------------------------*/
 .left-sidebar {
-	float: left;
-	width: 20%;
-	padding: 0 0 10px 1%;
+	flex-grow: 1;
+	padding-bottom: 10px;
 	border: 2px solid #3e9fb0;
 	border-radius: 10px;
 	background: #eee0c3;
 }
+.left-sidebar > input{
+	width: 70%;
+}
+
 .left-sidebar > *{
-	margin-top: 10px;
+	margin: 10px 5px 0 10px;
 }
 .buttons{
 	display: block;
